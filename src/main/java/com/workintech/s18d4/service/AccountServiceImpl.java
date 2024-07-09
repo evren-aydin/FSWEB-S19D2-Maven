@@ -5,6 +5,7 @@ import com.workintech.s18d4.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +30,15 @@ public class AccountServiceImpl implements AccountService{
             return accountOptional.get();
         }
         return null;
+    }
+
+    @Override
+    public List<Account> findAll() {
+        return accountRepository.findAll();
+    }
+
+    @Override
+    public void delete(long id) {
+        accountRepository.delete(id);
     }
 }

@@ -12,5 +12,6 @@ public interface AddressRepository extends JpaRepository<Address,Long> {
     @Query("SELECT a FROM Address a")
     List<Address> findAll();
 
-
+    @Query("DELETE FROM Address a WHERE a.id=:id")
+    void delete(long id);
 }

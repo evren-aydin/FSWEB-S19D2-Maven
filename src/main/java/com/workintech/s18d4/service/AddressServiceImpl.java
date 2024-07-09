@@ -6,7 +6,6 @@ import com.workintech.s18d4.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.foreign.AddressLayout;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +37,10 @@ public class AddressServiceImpl implements AddressService{
     @Override
     public List<Address> findAll() {
         return addressRepository.findAll();
+    }
+
+    @Override
+    public void delete(long id) {
+        addressRepository.delete(id);
     }
 }

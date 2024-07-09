@@ -40,8 +40,15 @@ public class AddressController {
             address1.setCountry(address.getCountry());
             address1.setStreet(address.getStreet());
             address1.setDescription(address.getDescription());
+            address1.setCustomer(address.getCustomer());
         }
 
     }
+
+    @DeleteMapping("/address/{id}")
+    public void delete(@PathVariable long id){
+        addressService.delete(id);
+    }
+
 
 }

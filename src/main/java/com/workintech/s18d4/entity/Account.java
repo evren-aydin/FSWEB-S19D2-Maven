@@ -22,7 +22,7 @@ public class Account {
     private String moneyAmount;
 
     @ManyToOne(cascade ={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,
-    CascadeType.REFRESH}  )
+    CascadeType.REFRESH})
     @JoinColumn(name="customer_id")
     private Customer customer;
 
